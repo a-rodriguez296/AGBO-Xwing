@@ -34,7 +34,7 @@
     
     UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
     
-    
+    // Translación
     [UIView animateWithDuration:1.0
                           delay:0
                         options:options
@@ -47,6 +47,25 @@
     
     
     
+    // Rotación
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:options
+                     animations:^{
+                         self.xwingView.transform = CGAffineTransformMakeRotation(M_2_PI);
+                         
+                     } completion:^(BOOL finished) {
+                         // Al terminar...
+                         
+                         [UIView animateWithDuration:0.5
+                                               delay:0
+                                             options:options
+                                          animations:^{
+                                              self.xwingView.transform = CGAffineTransformIdentity;
+                                          } completion:^(BOOL finished) {
+                                              //
+                                          }];
+                     }];
     
     
     
