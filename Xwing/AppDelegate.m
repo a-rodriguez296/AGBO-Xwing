@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AGTMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    AGTMainViewController *mVC = [AGTMainViewController new];
+    
+    self.window.rootViewController = mVC;
+    
+    [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 
