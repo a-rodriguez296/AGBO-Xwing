@@ -32,10 +32,12 @@
 
 -(void)didTap:(UITapGestureRecognizer *) tap{
     
+    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
+    
     
     [UIView animateWithDuration:1.0
                           delay:0
-                        options:0
+                        options:options
                      animations:^{
                          // Estado final
                          self.xwingView.center = [tap locationInView:self.spaceView];
